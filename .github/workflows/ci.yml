@@ -21,6 +21,7 @@ jobs:
               echo "APP_URL=$APP_URL" >> $GITHUB_ENV
       - name: Run Appium tests on BrowserStack
         run: |
+              npm install
               npm run test
         env:  
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
