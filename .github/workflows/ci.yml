@@ -17,8 +17,10 @@ jobs:
               RESPONSE=$(curl -u "${{ secrets.BROWSERSTACK_USERNAME }}:${{ secrets.BROWSERSTACK_ACCESS_KEY }}" \
               -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
               -F "file=@${GITHUB_WORKSPACE}/apps/ios/BStackSampleApp.ipa")
+              
               APP_URL=$(echo "$RESPONSE" | jq -r '.app_url')
               echo "APP_URL=$APP_URL" >> $GITHUB_ENV
+              BROWSERSTACK_BUILD_NAME: 'bstack-demo${{ github.run_number }}'
       - name: Run Appium tests on BrowserStack
         run: |
               npm install
@@ -32,7 +34,7 @@ jobs:
         with:
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-          build-name: bstack-demo${{ github.run_number }}
+          build-name: 'bstack-demo${{ github.run_number }}'
           report-timeout: 200 # This is an optional parameter
       - name: Upload HTML Report as Artifact
         uses: actions/upload-artifact@v4
