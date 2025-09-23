@@ -11,8 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run tests
-        run: echo "npm run test"
+      - name: Upload APK to BrowserStack
+        id: upload_app
+        run: |
+              RESPONSE=$(curl -u "${{ secrets.BROWSERSTACK_USERNAME }}:${{ secrets.BROWSERSTACK_ACCESS_KEY }}" \
+              -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+              -F "file=@SampleAndIos/apps")
+              APP_URL=$(echo "$RESPONSE" | jq -r '.app_url')
+              echo "APP_URL=$APP_URL" >> $GITHUB_ENV
+      - name: Run Appium tests on BrowserStack
+          un: |
+              npm run test
+        env:  
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          APP_URL: ${{ env.APP_URL }} # This is the app URL from the previous step
       - name: 'BrowserStack Build Report'
         uses: 'browserstack/github-actions/browserstack-report-action@master'
         with:
