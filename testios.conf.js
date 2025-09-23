@@ -10,7 +10,7 @@ exports.config = {
           browserstackLocal: true,
           accessibility: false,
           testObservabilityOptions: {
-                buildName: "bstack-demo",
+                buildName: process.env.BROWSERSTACK_BUILD_NAME,
                 projectName: "BrowserStack Sample",
                 buildTag: 'TestCustom'
               },
