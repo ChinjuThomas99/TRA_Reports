@@ -1,0 +1,12 @@
+[90m2025-09-23T06:29:40.521Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Starting percy
+[90m2025-09-23T06:29:40.521Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Starting percy
+[90m2025-09-23T06:29:42.894Z[39m [31mERROR[39m [97m@wdio/browserstack-service[39m Unable to fetch percy project token
+[90m2025-09-23T06:29:42.896Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Error in percy setup Error: Could not start percy, check percy logs for info.
+    at BrowserstackLauncherService.setupPercy (file:///Users/chinjutreesathomas/node_modules/@wdio/browserstack-service/build/index.js:3936:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackLauncherService.onPrepare (file:///Users/chinjutreesathomas/node_modules/@wdio/browserstack-service/build/index.js:3811:9)
+[90m2025-09-23T06:29:42.926Z[39m [31mERROR[39m [97m@wdio/browserstack-service[39m Unable to fetch percy project token
+[90m2025-09-23T06:29:42.928Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Error in percy setup Error: Could not start percy, check percy logs for info.
+    at BrowserstackLauncherService.setupPercy (file:///Users/chinjutreesathomas/node_modules/@wdio/browserstack-service/build/index.js:3936:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BrowserstackLauncherService.onPrepare (file:///Users/chinjutreesathomas/node_modules/@wdio/browserstack-service/build/index.js:3811:9)
