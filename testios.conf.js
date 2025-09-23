@@ -6,7 +6,7 @@ exports.config = {
       [
         'browserstack',
         {
-          app: 'SampleApp',
+          app: process.env.APP_URL,
           browserstackLocal: true,
           accessibility: false,
           testObservabilityOptions: {
