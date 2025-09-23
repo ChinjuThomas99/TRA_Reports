@@ -20,7 +20,6 @@ jobs:
               
               APP_URL=$(echo "$RESPONSE" | jq -r '.app_url')
               echo "APP_URL=$APP_URL" >> $GITHUB_ENV
-              BROWSERSTACK_BUILD_NAME: 'bstack-demo${{ github.run_number }}'
       - name: Run Appium tests on BrowserStack
         run: |
               npm install
@@ -29,6 +28,7 @@ jobs:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           APP_URL: ${{ env.APP_URL }} # This is the app URL from the previous step
+          BROWSERSTACK_BUILD_NAME: 'bstack-demo${{ github.run_number }}'
       - name: 'BrowserStack Build Report'
         uses: 'browserstack/github-actions/browserstack-report-action@master'
         with:
