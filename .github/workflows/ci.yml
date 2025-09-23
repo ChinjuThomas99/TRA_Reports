@@ -13,3 +13,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run tests
         run: echo "npm run test"
+      - name: 'BrowserStack Build Report'
+        uses: 'browserstack/github-actions/browserstack-report-action@master'
+        with:
+          username: $
+          access-key: $
+          build-name: BUILD_INFO
+          report-timeout: 2000 # This is an optional parameter
+      - name: Upload HTML Report as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: $
+            path: $
+        continue-on-error: true
