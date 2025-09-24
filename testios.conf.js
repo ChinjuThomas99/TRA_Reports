@@ -24,16 +24,12 @@ exports.config = {
           platformName: 'ios',
         } }],
     
-    var capabilities: {
-        'bstack:options' : {
-            "appProfiling" : "true",
-        }
-    },
     commonCapabilities: {
       'bstack:options': {
         debug: true,
         networkLogs: true,
-        interactiveDebugging : true
+        interactiveDebugging : true,
+        appProfiling: true,
     }
     },
     maxInstances: 10,
