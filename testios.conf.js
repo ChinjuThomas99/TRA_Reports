@@ -29,7 +29,7 @@ exports.config = {
         debug: true,
         networkLogs: true,
         interactiveDebugging : true,
-        appProfiling: true,
+        appProfiling: "true",
     }
     },
     maxInstances: 10,
