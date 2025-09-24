@@ -22,14 +22,14 @@ exports.config = {
           deviceName: 'iPhone .*',
           platformVersion: '17',
           platformName: 'ios',
+          appProfiling: true
         } }],
     
     commonCapabilities: {
       'bstack:options': {
         debug: true,
         networkLogs: true,
-        interactiveDebugging : true,
-        appProfiling: "true",
+        interactiveDebugging : true
     }
     },
     maxInstances: 10,
