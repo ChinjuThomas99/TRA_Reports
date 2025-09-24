@@ -1,5 +1,4 @@
 var assert = require('assert');
-const { percy } = require('browserstack-node-sdk');
 
 describe('Text Verification', () => {
   it('should match displayed text with input text', async () => {
@@ -14,7 +13,6 @@ describe('Text Verification', () => {
 
     var textOutput = await $(`~Text Output`);
     await textOutput.waitForDisplayed({ timeout: 30000 });
-    await percy.screenshotApp("My Screenshot")
     var value = await textOutput.getText();
 
     if (value === "hello@browserstack.com")
