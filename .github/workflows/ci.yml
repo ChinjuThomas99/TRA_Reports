@@ -24,6 +24,7 @@ jobs:
       - name: Run Appium tests on BrowserStack
         run: |
               npm install
+              npm i -D @wdio/browserstack-service
               npm run test
         env:  
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
