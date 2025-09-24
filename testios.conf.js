@@ -8,6 +8,9 @@ exports.config = {
         {
           app: process.env.APP_URL,
           browserstackLocal: true,
+            buildIdentifier: "${BUILD_NUMBER}",
+            percy: true,
+            percyCaptureMode: 'auto'
           accessibility: true,
           testObservabilityOptions: {
                 buildName: process.env.BROWSERSTACK_BUILD_NAME,
