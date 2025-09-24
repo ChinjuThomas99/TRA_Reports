@@ -24,7 +24,7 @@ jobs:
       - name: Run Appium tests on BrowserStack
         run: |
               npm install
-              npm install --save-dev @percy/cli
+              npm install -g @percy/cli
               percy app:exec -- npm run test
         env:  
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
