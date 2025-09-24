@@ -22,7 +22,6 @@ exports.config = {
           deviceName: 'iPhone .*',
           platformVersion: '17',
           platformName: 'ios',
-          appProfiling: true
         } }],
     
     commonCapabilities: {
