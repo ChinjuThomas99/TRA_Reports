@@ -10,7 +10,7 @@ exports.config = {
           browserstackLocal: true,
             buildIdentifier: "${BUILD_NUMBER}",
             percy: true,
-            percyCaptureMode: 'auto'
+            percyCaptureMode: 'auto',
           accessibility: true,
           testObservabilityOptions: {
                 buildName: process.env.BROWSERSTACK_BUILD_NAME,
