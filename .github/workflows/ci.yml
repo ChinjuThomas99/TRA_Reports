@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
       - name: Upload IPA to BrowserStack
         id: upload_app
         run: |
@@ -27,14 +24,13 @@ jobs:
       - name: Run Appium tests on BrowserStack
         run: |
               npm install
-              npm install -g @percy/cli
-              percy app:exec -- npm run test
+              npm run test
         env:  
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
           BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
           APP_URL: ${{ env.APP_URL }} # This is the app URL from the previous step
           BROWSERSTACK_BUILD_NAME: 'ios-build-${{ github.run_number }}'
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+
       - name: 'BrowserStack Build Report'
         uses: 'browserstack/github-actions/browserstack-report-action@master'
         with:
