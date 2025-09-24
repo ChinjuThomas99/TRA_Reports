@@ -23,7 +23,12 @@ exports.config = {
           platformVersion: '17',
           platformName: 'ios',
         } }],
-
+    
+    var capabilities: {
+        'bstack:options' : {
+            "appProfiling" : "true",
+        }
+    },
     commonCapabilities: {
       'bstack:options': {
         debug: true,
