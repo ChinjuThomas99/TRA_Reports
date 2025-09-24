@@ -13,7 +13,7 @@ exports.config = {
           accessibility: true,
           testObservabilityOptions: {
                 buildName: process.env.BROWSERSTACK_BUILD_NAME,
-                projectName: "BrowserStack Sample",
+                projectName: "ActionsDemo",
                 buildTag: 'TestCustom'
               },
         },
