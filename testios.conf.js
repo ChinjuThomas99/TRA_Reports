@@ -28,7 +28,8 @@ exports.config = {
       'bstack:options': {
         debug: true,
         networkLogs: true,
-        interactiveDebugging : true
+        interactiveDebugging : true,
+          appProfiling : true
     }
     },
     maxInstances: 10,
