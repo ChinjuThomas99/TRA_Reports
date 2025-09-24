@@ -28,9 +28,7 @@ exports.config = {
       'bstack:options': {
         debug: true,
         networkLogs: true,
-        interactiveDebugging : true,
-          percy: true,
-          percyCaptureMode: auto
+        interactiveDebugging : true
     }
     },
     maxInstances: 10,
