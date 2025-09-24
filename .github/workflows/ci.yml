@@ -1,10 +1,11 @@
-name: CI
+name: Manual Trigger Workflow
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      
 
 jobs:
   build:
